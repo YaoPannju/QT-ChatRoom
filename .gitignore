@@ -1,0 +1,41 @@
+# 构建目录
+build/
+build-*/
+*/build-*
+
+# Qt Creator 生成的文件
+*.pro.user
+*.pro.user.*
+
+# 编译中间文件
+*.o
+*.obj
+*.d
+*.ilk
+*.pdb
+
+# 可执行文件
+*.exe
+*.app
+*.dmg
+
+# Qt 特定的文件
+Makefile*
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.moc
+*.qmlc
+*.jom
+
+# 依赖文件夹
+release/
+debug/
+*.tmp
+*.swp
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
