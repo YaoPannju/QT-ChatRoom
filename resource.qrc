@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>Robin.ico</file>
+        <file>Robin.png</file>
+    </qresource>
+</RCC>

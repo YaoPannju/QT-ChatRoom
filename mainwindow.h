@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "login.h"
+
 /**********************************************************************************************************************************
  *
  * Project Title:ChatRoom
@@ -29,5 +31,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    LogIn* _login;
 };
 #endif // MAINWINDOW_H
