@@ -15,6 +15,9 @@ public:
     explicit LogIn(QWidget *parent = nullptr);
     ~LogIn();
 
+signals:
+    void switchRegister();
+
 private:
     Ui::LogIn *ui;
 };

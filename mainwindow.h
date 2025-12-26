@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 #include "login.h"
+#include "register.h"
 
 /**********************************************************************************************************************************
  *
@@ -29,8 +30,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void SwitchLgnToReg();
+
 private:
     Ui::MainWindow *ui;
     LogIn* _login;
+    Register* _register;
 };
 #endif // MAINWINDOW_H

@@ -2,5 +2,6 @@
     <qresource prefix="/img">
         <file>Robin.ico</file>
         <file>Robin.png</file>
+        <file>Register_Robin.png</file>
     </qresource>
 </RCC>

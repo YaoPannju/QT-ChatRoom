@@ -232,7 +232,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="RegButton">
          <property name="text">
           <string>注册</string>
          </property>
