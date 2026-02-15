@@ -1,7 +1,8 @@
 <RCC>
-    <qresource prefix="/img">
-        <file>Robin.ico</file>
-        <file>Robin.png</file>
-        <file>Register_Robin.png</file>
+    <qresource prefix="/">
+        <file>img/Register_Robin.png</file>
+        <file>img/Robin.ico</file>
+        <file>img/Robin.png</file>
+        <file>style/stylesheet.qss</file>
     </qresource>
 </RCC>

@@ -2,6 +2,7 @@
 #define LOGIN_H
 
 #include <QDialog>
+#include <QLineEdit>
 
 namespace Ui {
 class LogIn;

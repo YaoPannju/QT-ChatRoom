@@ -7,21 +7,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //主窗口一开始初始化为登陆界面
-    _login = new LogIn();
-    setCentralWidget(_login);
-    _login->show();
+    _login = nullptr;
+    _register = nullptr;
 
-    QSize loginSize = _login->size();
-
-    qDebug() << "获取到的登录界面大小:" << loginSize;
-
-    this->resize(loginSize);
-
-    //初始化注册界面
-    _register = new Register();
-
-    connect(_login, &LogIn::switchRegister, this, &MainWindow::SwitchLgnToReg);
+    showLoginDialog();
 
 }
 
@@ -38,8 +27,36 @@ MainWindow::~MainWindow()
     }
 }
 
-void MainWindow::SwitchLgnToReg(){
-    setCentralWidget(_register);
-    _login->hide();
-    _register->show();
+void MainWindow::showLoginDialog() {
+    if(!_login){
+        _login = new LogIn();
+        connect(_login, &LogIn::switchRegister, this, &MainWindow::SwitchL2R);
+    }
+    _login->exec();
+}
+
+void MainWindow::showRegisterDialog(){
+    if(!_register){
+        _register = new Register();
+        connect(_register, &Register::BackLogin, this, &MainWindow::SwitchR2L);
+    }
+    _register->exec();
+}
+
+void MainWindow::SwitchL2R(){
+    if(_login){
+        _login->accept();
+        delete _login;
+        _login = nullptr;
+    }
+    showRegisterDialog();
+}
+
+void MainWindow::SwitchR2L(){
+    if(_register){
+        _register->accept();
+        delete _register;
+        _register = nullptr;
+    }
+    showLoginDialog();
 }

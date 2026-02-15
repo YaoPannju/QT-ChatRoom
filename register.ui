@@ -21,7 +21,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="9,2,2,2,2,2,1">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="9,1,2,2,2,2,2,1">
      <item>
       <widget class="QWidget" name="widget" native="true">
        <widget class="QLabel" name="label">
@@ -49,6 +49,22 @@
       </widget>
      </item>
      <item>
+      <widget class="QWidget" name="widget_2" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="err_tip">
+          <property name="text">
+           <string>错误提示</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QLabel" name="label_2">
@@ -72,7 +88,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_5"/>
+        <widget class="QLineEdit" name="Email_Edit"/>
        </item>
       </layout>
      </item>
@@ -86,7 +102,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3"/>
+        <widget class="QLineEdit" name="New_pwd"/>
        </item>
       </layout>
      </item>
@@ -100,7 +116,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="Confirm_New_pwd"/>
        </item>
       </layout>
      </item>

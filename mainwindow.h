@@ -31,7 +31,10 @@ public:
     ~MainWindow();
 
 private slots:
-    void SwitchLgnToReg();
+    void showLoginDialog();
+    void showRegisterDialog();
+    void SwitchR2L();
+    void SwitchL2R();
 
 private:
     Ui::MainWindow *ui;
