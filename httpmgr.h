@@ -19,8 +19,13 @@ private:
     friend class Singleton<HttpMgr>;
     HttpMgr();
     QNetworkAccessManager _manager;
+    void PostHttpReq(QUrl url, QJsonObject json, ReqId req_id, Modules mode);
+public slots:
+    void slot_http_finish(ReqId id, QString res, ErrorCodes err, Modules mod);
 signals:
-    void sig_http_finish();
+    void sig_http_finish(ReqId id, QString res, ErrorCodes err, Modules mod);
+    //注册模块http相关请求完成发送此信号
+    void sig_reg_mod_finish(ReqId id, QString res, ErrorCodes err);
 };
 
 #endif // HTTPMGR_H

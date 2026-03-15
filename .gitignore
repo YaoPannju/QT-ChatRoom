@@ -1,41 +1,60 @@
-# 构建目录
+# 构建目录（增强匹配：覆盖所有层级的build目录）
 build/
 build-*/
 */build-*
+**/build/**  # 新增：匹配任意目录下的build文件夹（如src/build、test/build）
 
-# Qt Creator 生成的文件
+# Qt Creator 生成的文件（保持不变，已覆盖）
 *.pro.user
 *.pro.user.*
 
-# 编译中间文件
+# 编译中间文件（补充更多Qt编译产物）
 *.o
 *.obj
 *.d
 *.ilk
 *.pdb
+*.lib  # 新增：静态库文件
+*.exp  # 新增：导出文件
+*.manifest  # 新增：Windows清单文件
 
-# 可执行文件
+# 可执行文件（补充动态库）
 *.exe
 *.app
 *.dmg
+*.dll  # 新增：Windows动态库
+*.so   # 新增：Linux动态库
+*.dylib  # 新增：macOS动态库
+*.a    # 新增：Linux静态库
 
-# Qt 特定的文件
+# Qt 特定的文件（保持不变，已覆盖qrc_*.cpp）
 Makefile*
 moc_*.cpp
 moc_*.h
-qrc_*.cpp
+qrc_*.cpp  # 关键：已包含你推送失败的qrc_res.cpp
 ui_*.h
 *.moc
 *.qmlc
 *.jom
 
-# 依赖文件夹
+# 依赖文件夹（增强匹配：覆盖所有层级的debug/release）
 release/
 debug/
+**/release/**  # 新增：匹配任意目录下的release文件夹
+**/debug/**    # 新增：匹配任意目录下的debug文件夹
 *.tmp
 *.swp
 *~
 
-# 系统文件
+# 系统文件（保持不变）
 .DS_Store
 Thumbs.db
+
+# 新增：Qt CMake相关产物（如果你用CMake构建）
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake

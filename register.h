@@ -5,6 +5,8 @@
 #include <QLineEdit>
 #include <QRegularExpression>
 
+#include "Global.h"
+
 namespace Ui {
 class Register;
 }
@@ -23,10 +25,14 @@ signals:
 private slots:
     void on_GetConfirm_Button_clicked();
 
+public slots:
+    void slot_reg_mod_finish(ReqId id, QString res, ErrorCodes err);
+
 private:
     Ui::Register *ui;
-
+    void initHttpHandlers();
     void showTip(QString str, bool b_ok);
+    QMap<ReqId, std::function<void(const QJsonObject&)>> _handlers;
 };
 
 #endif // REGISTER_H
